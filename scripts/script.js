@@ -258,7 +258,7 @@ function conditionnalDisplay() {
 
         if (product.name == 'parme' || product.name == 'paris') {
             $('.add-to-cart-2').hide();
-            $('.pricemodalenfant').html(product.prix.fixe + '€');
+            $('.pricemodalenfant').html(product.prix.fixe + 'â‚¬');
             $('.openmodalenfant').css('display', 'flex');
         } else {
             $('.add-to-cart-2').show();
@@ -308,7 +308,7 @@ function updatePrice(attrName, value) {
     }
     let priceString = '';
     if (price != 0) {
-        priceString = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + ' €';
+        priceString = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + ' â‚¬';
     }
     console.log(priceString);
     $('.pricerecap').html(priceString);
@@ -336,7 +336,7 @@ function updateJardinPrice(attrName, value) {
         price += isolationPrice;
     }
     if (price != 0) {
-        let priceString = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + ' €';
+        let priceString = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + ' â‚¬';
         $('.pricejardin').html(priceString);
     }
 
@@ -381,16 +381,16 @@ function setRecap() {
     var sol, colorExt;
     switch (selectedOptions[DESIGN_OPTION]) {
         case 'sansAmenagement_v1':
-            design = "Sans aménagement Version 01"
+            design = "Sans amÃ©nagement Version 01"
             break;
         case 'sansAmenagement_v2':
-            design = "Sans aménagement Version 02"
+            design = "Sans amÃ©nagement Version 02"
             break;
         case 'amenagement_v1':
-            design = "Aménagement Version 01"
+            design = "AmÃ©nagement Version 01"
             break;
         case 'amenagement_v2':
-            design = "Aménagement Version 02"
+            design = "AmÃ©nagement Version 02"
             break;
         default:
     }
@@ -402,16 +402,16 @@ function setRecap() {
             design2 = "Bardage B/T"
             break;
         case 'luxe':
-            design2 = "Bardage chêne"
+            design2 = "Bardage chÃªne"
             break;
         default:
     }
     switch (selectedOptions[SOL_OPTION]) {
         case 'parquet':
-            sol = "Parquet contrecollé"
+            sol = "Parquet contrecollÃ©"
             break;
         case 'stratifie':
-            sol = "Stratifié"
+            sol = "StratifiÃ©"
             break;
         default:
     }
@@ -423,7 +423,7 @@ function setRecap() {
             colorExt = "Noir RAL 7021"
             break;
         case 'gris':
-            colorExt = "Gris foncé RAL 7016"
+            colorExt = "Gris foncÃ© RAL 7016"
             break;
         case 'bleu':
             colorExt = "Bleu RAL 5013"
@@ -432,12 +432,12 @@ function setRecap() {
             colorExt = "Vert RAL 6005"
             break;
         case 'brule':
-            colorExt = "Bois brûlé"
+            colorExt = "Bois brÃ»lÃ©"
             break;
         default:
     }
 
-    $('#' + SURFACE_OPTION + '-recap').html(selectedOptions[SURFACE_OPTION] + "m²");
+    $('#' + SURFACE_OPTION + '-recap').html(selectedOptions[SURFACE_OPTION] + "mÂ²");
     $('#' + DESIGN_OPTION + '-recap').html(design);
     $('#' + DESIGN2_OPTION + '-recap').html(design2);
     $('#' + SOL_OPTION + '-recap').html(sol);
@@ -596,7 +596,7 @@ $(document).ready(function () {
         let selectId = select.attr('id');
 
         // html() = product option label in webflow
-        if (label.html() == 'Couleur Extérieure') {
+        if (label.html() == 'Couleur ExtÃ©rieure') {
             selectOptionColorExtJardinId = selectId;
             setValueToSelectBlock(COLOR_EXT_JARDIN_OPTION, options);
         } else if (label.html() == 'Porte') {
@@ -711,10 +711,10 @@ $(document).ready(function () {
             if ($('#' + selectOptionIsolationJardinId).val() && !$(event.currentTarget).hasClass('clicked')) {
                 $('.addtocartcustom .text-block-20').html('...');
                 $('#submitjardin').click();
-                $('.addtocartcustom .text-block-20').html('Ajoutée');
+                $('.addtocartcustom .text-block-20').html('AjoutÃ©e');
                 $('.addtocartcustom').addClass('clicked');
                 $('.modal').css('display', 'none');
-                $('.openmodal').html('Ajoutée');
+                $('.openmodal').html('AjoutÃ©e');
                 $('.openmodal').addClass('clicked');
                 $('.modalmask').css('display', 'none');
                 $('.showmodal').css('display', 'none');
@@ -799,14 +799,13 @@ $(document).ready(function () {
     $('.addtocartcustomenfant').not('.clicked').click(function (e) {
         $('.addtocartcustomenfant .text-block-20').html('...');
         $('.add-to-cart-2 input[type=submit]').click();
-        $('.addtocartcustomenfant .text-block-20').html('Ajoutée');
+        $('.addtocartcustomenfant .text-block-20').html('AjoutÃ©e');
         $('.addtocartcustomenfant').addClass('clicked');
         $('.modal').css('display', 'none');
-        $('.openmodalenfant').html('Ajoutée');
+        $('.openmodalenfant').html('AjoutÃ©e');
         $('.openmodalenfant').addClass('clicked');
         $('.modalmask').css('display', 'none');
         $('.showmodalenfant').css('display', 'none');
     })
 
 });
-
