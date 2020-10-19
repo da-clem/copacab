@@ -563,9 +563,9 @@ function nextListenerCheckbox(identifier) {
     $('#next-step-' + identifier).click(function (e) {
         e.preventDefault();
         if (identifier == PILOTIS_OPTION) {
-            selectedOptions.MONTAGE_SHOW_PRICE = false;
+            selectedOptions.MONTAGE_SHOW_PRICE = true;
             //updatePrice(MONTAGE_OPTION, "true");
-            $('[montage=false]').click();
+            $('[montage=true]').click();
             //selectedOptions[MONTAGE_OPTION]=true;
         } else if (identifier == MONTAGE_OPTION) {
             setRecap();
